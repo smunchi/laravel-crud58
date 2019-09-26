@@ -40,7 +40,7 @@ class BookController extends Controller
     {
         Book::create($request->all());
 
-        return redirect('/books', ['success', 'Book is successfully saved']);
+        return redirect('/books')->with('success', 'Book is successfully saved');
     }
 
     /**
