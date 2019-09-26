@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Book;
+use App\Http\Requests\BookRequest;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -13,7 +15,9 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
+        $books = Book::all();
+
+        return view('index', compact($books));
     }
 
     /**
@@ -32,9 +36,11 @@ class BookController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BookRequest $request)
     {
-        //
+        Book::create($request->all());
+
+        return redirect('/books', ['success', 'Book is successfully saved']);
     }
 
     /**
