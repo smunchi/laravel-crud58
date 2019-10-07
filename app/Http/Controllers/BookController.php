@@ -62,7 +62,9 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-        //
+        $book = Book::findOrFail($id);
+
+        return view('edit', array('book' => $book));
     }
 
     /**
@@ -72,9 +74,11 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(BookRequest $request, $id)
     {
-        //
+        Book::find($id)->update($request->all());
+
+        return redirect('/books')->with('success', 'Book is successfully updated');
     }
 
     /**
@@ -85,6 +89,9 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $book = Book::findOrFail($id);
+        $book->delete();
+
+        return redirect('/books')->with('success', 'Book is successfully deleted');
     }
 }

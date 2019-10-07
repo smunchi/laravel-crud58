@@ -27,7 +27,7 @@
                 <tr>
                     <td>{{$book->id}}</td>
                     <td>{{$book->book_name}}</td>
-                    <td><a href="{{ route('books.edit',$book->id)}}" class="btn btn-primary">Edit</a></td>
+                    <td><a href="{{ route('books.edit', $book->id)}}" class="btn btn-primary">Edit</a></td>
                     <td>
                         <form action="{{ route('books.destroy', $book->id)}}" method="post">
                             @csrf
