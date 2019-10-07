@@ -24,7 +24,7 @@ class BookRequest extends FormRequest
     public function rules()
     {
         return [
-            'book_name' => 'required'
+            'name' => 'required'
         ];
     }
 }

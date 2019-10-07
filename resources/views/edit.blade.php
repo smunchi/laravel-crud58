@@ -36,7 +36,7 @@
                     <textarea class="form-control" name="description" rows="3" cols="15">{{ $book->description }}</textarea>
                 </div>
                 <div class="form-group">
-                    <label for="price">ISBN:</label>
+                    <label for="price">Price:</label>
                     <input type="text" class="form-control" name="price" value="{{ $book->price }}"/>
                 </div>
                 <button type="submit" class="btn btn-primary">Update Book</button>

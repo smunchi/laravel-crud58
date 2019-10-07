@@ -38,7 +38,7 @@
                     <textarea class="form-control" name="description" rows="3" cols="15"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="price">ISBN:</label>
+                    <label for="price">Price:</label>
                     <input type="text" class="form-control" name="price"/>
                 </div>
                 <button type="submit" class="btn btn-primary">Create Book</button>
