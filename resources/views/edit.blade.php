@@ -25,7 +25,7 @@
                     @csrf
                     @method('PATCH')
                     <label for="name">Book Name:</label>
-                    <input type="text" class="form-control" name="book_name" value="{{$book->book_name}}"/>
+                    <input type="text" class="form-control" name="book_name" value="{{$book->name}}"/>
                 </div>
                 <div class="form-group">
                     <label for="isbn_no">ISBN No:</label>
