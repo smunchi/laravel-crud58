@@ -22,6 +22,7 @@
                 <td>ISBN No</td>
                 <td>Description</td>
                 <td>Price</td>
+                <td>Author</td>
                 <td colspan="2">Action</td>
             </tr>
             </thead>
@@ -33,6 +34,7 @@
                     <td>{{$book->isbn_no}}</td>
                     <td>{{$book->description}}</td>
                     <td>{{$book->price}}</td>
+                    <td>{{$book->user->name}}</td>
                     <td><a href="{{ route('books.edit', $book->id)}}" class="btn btn-primary">Edit</a></td>
                     <td>
                         <form action="{{ route('books.destroy', $book->id)}}" method="post">
