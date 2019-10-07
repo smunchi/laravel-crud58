@@ -2,9 +2,26 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model
 {
-    protected $fillable = ['book_name'];
+    protected $fillable = ['name'];
+
+    public function user()
+    {
+        $this->belongsTo(User::class);
+    }
+
+    public function scopeActive(Builder $builder)
+    {
+        return $builder->where('active', 1);
+    }
+
+    //------------- Accessors ----------------------
+    public function getNameAttribute($value)
+    {
+        return ucfirst($value);
+    }
 }

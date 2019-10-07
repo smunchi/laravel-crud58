@@ -16,6 +16,10 @@ use Faker\Generator as Faker;
 
 $factory->define(Book::class, function (Faker $faker) {
     return [
-        'book_name' => $faker->name
+        'name' => $faker->name,
+        'isbn_no' => $faker->isbn10,
+        'description' => $faker->text,
+        'price' => $faker->numberBetween(10, 20),
+        'user_id' => null
     ];
 });

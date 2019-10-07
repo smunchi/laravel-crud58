@@ -27,6 +27,18 @@
                     <label for="name">Book Name:</label>
                     <input type="text" class="form-control" name="book_name" value="{{$book->book_name}}"/>
                 </div>
+                <div class="form-group">
+                    <label for="isbn_no">ISBN No:</label>
+                    <input type="text" class="form-control" name="isbn_no" value="{{ $book->isbn_no }}"/>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea class="form-control" name="description" rows="3" cols="15">{{ $book->description }}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="price">ISBN:</label>
+                    <input type="text" class="form-control" name="price" value="{{ $book->price }}"/>
+                </div>
                 <button type="submit" class="btn btn-primary">Update Book</button>
             </form>
         </div>
