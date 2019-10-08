@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Book;
 use App\Http\Requests\BookRequest;
+use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
+    use Authorizable;
     /**
      * Display a listing of the resource.
      *

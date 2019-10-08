@@ -11,6 +11,9 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\User::class)->create();
+        foreach (config('acl.roles') as $roleName) {
+            $user = factory(\App\User::class)->create();
+            $user->assignRole($roleName);
+        }
     }
 }

@@ -15,8 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resources(['books'=> 'BookController']);
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group( ['middleware' => ['auth']], function() {
+    Route::resources(['books'=> 'BookController']);
+});
