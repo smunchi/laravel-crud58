@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class BookSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,6 @@ class BookSeeder extends Seeder
      */
     public function run()
     {
-        $user = \App\User::first();
-        factory(\App\Book::class, 10)->create(['user_id' => $user->id]);
+        factory(\App\User::class)->create();
     }
 }
