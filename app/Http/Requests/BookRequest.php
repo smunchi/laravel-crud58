@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\BookTypeNotIn;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class BookRequest extends FormRequest
 {
@@ -24,7 +26,7 @@ class BookRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required'
+            'name' => ['required', Rule::in(config('enums.book_type')), new BookTypeNotIn(['Politics'])]
         ];
     }
 }
