@@ -21,6 +21,7 @@ class CreateBooksTable extends Migration
             $table->string('price');
             $table->unsignedInteger('user_id')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
