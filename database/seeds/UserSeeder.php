@@ -11,9 +11,11 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        foreach (config('acl.roles') as $roleName) {
-            $user = factory(\App\User::class)->create();
-            $user->assignRole($roleName);
-        }
+        $user = factory(\App\User::class)->create();
+        $user->assignRole('admin');
+        //permission = Permission::create(['name' => 'book.index']);
+        //$permission = Permission::first();
+        //$permission->assignRole('admin');
+        // Auth()->user()->assignRole('admin');
     }
 }

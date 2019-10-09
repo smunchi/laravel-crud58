@@ -1,8 +1,5 @@
 <?php
 return [
-    'roles' => ['root', 'admin'],
-
-    'permissions' => [
-
-    ],
+    'roles' => ['admin'],
+    'permissions' => ['book index']
 ];

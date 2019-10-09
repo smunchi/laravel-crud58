@@ -32,14 +32,9 @@ class RolesAndPermissionsTableseeder extends Seeder
     public function savePermissions()
     {
         $permissions = [];
-        $getPermissions = config('acl.permissions');
-        $sl = 0;
+        $permissions[0]['name'] = 'book index';
+        $permissions[0]['guard_name'] = 'web';
 
-        foreach ($getPermissions as $key => $permission) {
-            $permissions[$sl]['name'] = $key;
-            $permissions[$sl]['guard_name'] = 'web';
-            $sl++;
-        }
         return \Spatie\Permission\Models\Permission::insert($permissions);
     }
 }
